@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lenggo Genni · Aspiring Data Engineer</title>
+  <meta name="description" content="Portfolio of Lenggo Genni, an Information Systems student building data pipelines, lakehouses, and data warehouses." />
+  <meta name="theme-color" content="#f7f6f2" />
+  <meta property="og:title" content="Lenggo Genni · Aspiring Data Engineer" />
+  <meta property="og:description" content="Data pipelines, lakehouses, and data warehouses: selected data engineering projects." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f766e'/%3E%3Ctext x='16' y='23' font-size='19' text-anchor='middle' fill='white' font-family='Georgia,serif' font-weight='700'%3EL%3C/text%3E%3C/svg%3E" />
+
+  <script>document.documentElement.classList.add('js');</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- NAVBAR -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a class="brand" href="#top" aria-label="Lenggo, back to top">Lenggo<span>.</span></a>
+      <button class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle menu">
+        <i class="bi bi-list"></i>
+      </button>
+      <nav class="nav__links" id="nav-links" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="container hero__grid">
+        <div class="hero__text">
+          <img
+            src="lenggo.jpg"
+            alt="Portrait of Lenggo Genni"
+            class="hero__avatar"
+            width="88" height="88"
+            onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'hero__avatar hero__avatar--fallback',textContent:'LG'}))"
+          />
+          <p class="eyebrow">Information Systems · ITS</p>
+          <h1 class="hero__name">Lenggo <em>Genni</em></h1>
+          <p class="hero__role">Aspiring Data Engineer</p>
+          <p class="hero__lede">
+            I design data pipelines and warehouses that turn raw, scattered sources into data people can trust.
+          </p>
+          <div class="hero__cta">
+            <a href="#projects" class="btn btn--primary">View projects <i class="bi bi-arrow-down"></i></a>
+            <a href="#contact" class="btn btn--ghost">Get in touch</a>
+          </div>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true">
+          <p class="hero__visual-label">raw → silver → gold</p>
+          <svg viewBox="0 0 420 220" class="hero-flow">
+            <!-- sources -->
+            <g class="hf-src">
+              <circle cx="22" cy="48" r="6"/><circle cx="22" cy="86" r="6"/>
+              <circle cx="22" cy="124" r="6"/><circle cx="22" cy="162" r="6"/>
+            </g>
+            <path class="hf-line hf-flow" d="M28 48 C60 48 60 105 96 105"/>
+            <path class="hf-line hf-flow" d="M28 86 C60 86 60 105 96 105"/>
+            <path class="hf-line hf-flow" d="M28 124 C60 124 60 105 96 105"/>
+            <path class="hf-line hf-flow" d="M28 162 C60 162 60 105 96 105"/>
+
+            <rect x="96"  y="70" width="68" height="70" rx="10" class="hf-box hf-raw"/>
+            <rect x="196" y="70" width="68" height="70" rx="10" class="hf-box hf-silver"/>
+            <rect x="296" y="70" width="68" height="70" rx="10" class="hf-box hf-gold"/>
+            <path class="hf-line hf-flow" d="M164 105 H196"/>
+            <path class="hf-line hf-flow" d="M264 105 H296"/>
+            <path class="hf-line hf-flow" d="M364 105 H396"/>
+            <g class="hf-bars"><rect x="398" y="96" width="5" height="18" rx="1.5"/><rect x="406" y="86" width="5" height="28" rx="1.5"/><rect x="414" y="76" width="5" height="38" rx="1.5"/></g>
+
+            <text x="130" y="161" text-anchor="middle" class="hf-text">raw</text>
+            <text x="230" y="161" text-anchor="middle" class="hf-text">silver</text>
+            <text x="330" y="161" text-anchor="middle" class="hf-text">gold</text>
+            <text x="130" y="110" text-anchor="middle" class="hf-glyph">{ }</text>
+            <text x="230" y="110" text-anchor="middle" class="hf-glyph">▦</text>
+            <text x="330" y="110" text-anchor="middle" class="hf-glyph">★</text>
+          </svg>
+          <p class="hero__visual-sub">Medallion architecture, the pattern behind my projects.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section section--alt" id="about">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">About</p>
+          <h2 class="section-title">Building the layers beneath the dashboard.</h2>
+        </div>
+
+        <div class="about__grid">
+          <div class="about__text reveal">
+            <p>
+              I'm <strong>Lenggo</strong>, a 2nd-year Information Systems student at
+              <strong>Institut Teknologi Sepuluh Nopember (ITS)</strong>, focused on data engineering:
+              ingesting data from multiple sources, cleaning and modeling it in layers, and serving it for analytics.
+            </p>
+            <p>
+              My background in data analytics and UI/UX design keeps me thinking about the people who
+              use the data at the end of the pipeline.
+            </p>
+
+            <div class="stack">
+              <div class="stack__group">
+                <span class="stack__label">Languages</span>
+                <div class="chips"><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">T-SQL</span></div>
+              </div>
+              <div class="stack__group">
+                <span class="stack__label">Data &amp; storage</span>
+                <div class="chips"><span class="chip">PostgreSQL</span><span class="chip">SQL Server</span><span class="chip">Parquet</span></div>
+              </div>
+              <div class="stack__group">
+                <span class="stack__label">Python libraries</span>
+                <div class="chips"><span class="chip">pandas</span><span class="chip">SQLAlchemy</span><span class="chip">PyArrow</span></div>
+              </div>
+              <div class="stack__group">
+                <span class="stack__label">BI</span>
+                <div class="chips"><span class="chip">Power BI</span></div>
+              </div>
+              <div class="stack__group">
+                <span class="stack__label">Practices</span>
+                <div class="chips"><span class="chip">ETL</span><span class="chip">Medallion architecture</span><span class="chip">Dimensional modeling</span><span class="chip">Data quality checks</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills">
+            <article class="skill reveal" data-delay="0">
+              <i class="bi bi-diagram-3 skill__icon"></i>
+              <h3>Data pipelines</h3>
+              <p>Ingesting databases, spreadsheets, JSON, and CSV, then cleaning and standardizing them with Python and T-SQL.</p>
+            </article>
+            <article class="skill reveal" data-delay="80">
+              <i class="bi bi-layers skill__icon"></i>
+              <h3>Lakehouse &amp; warehousing</h3>
+              <p>Bronze, silver, and gold layers feeding star and galaxy schemas built for analysis.</p>
+            </article>
+            <article class="skill reveal" data-delay="160">
+              <i class="bi bi-patch-check skill__icon"></i>
+              <h3>Data quality</h3>
+              <p>Deduplication, standardization, and checks that catch problems before they reach a report.</p>
+            </article>
+            <article class="skill reveal" data-delay="240">
+              <i class="bi bi-bar-chart-line skill__icon"></i>
+              <h3>Analytics &amp; BI</h3>
+              <p>Power BI dashboards built on top of the warehouse, so the data finally gets used.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">Selected projects</p>
+          <h2 class="section-title">Data engineering work.</h2>
+          <p class="section__sub">Select a project to read the full case study.</p>
+        </div>
+
+        <div class="projects">
+          <a class="card reveal" href="#p-lakehouse" data-delay="0">
+            <div class="card__media">
+              <img src="assets/img/lakehouse-galaxy-schema.webp" alt="Galaxy schema of the AdventureWorks data warehouse" width="1067" height="726" loading="lazy" />
+            </div>
+            <div class="card__body">
+              <span class="card__tag">Team project · Data lakehouse</span>
+              <h3 class="card__title">AdventureWorks Data Lakehouse</h3>
+              <p class="card__desc">
+                A Medallion lakehouse that unifies PostgreSQL, Excel, JSON, and CSV sources, feeds a
+                galaxy-schema warehouse, and powers three Power BI dashboards.
+              </p>
+              <div class="chips chips--sm"><span class="chip">PostgreSQL</span><span class="chip">Python</span><span class="chip">Parquet</span><span class="chip">Power BI</span></div>
+              <p class="card__meta">4 sources · 3 layers · 3 facts &amp; 5 dimensions</p>
+              <span class="card__cta">Read case study <i class="bi bi-arrow-right"></i></span>
+            </div>
+          </a>
+
+          <a class="card reveal" href="#p-sql-dwh" data-delay="100">
+            <div class="card__media">
+              <img src="assets/img/sqldwh-architecture.webp" alt="High-level architecture of the SQL Server data warehouse" width="1364" height="724" loading="lazy" />
+            </div>
+            <div class="card__body">
+              <span class="card__tag">Self-learning project · Data warehouse</span>
+              <h3 class="card__title">SQL Server Data Warehouse</h3>
+              <p class="card__desc">
+                A Bronze–Silver–Gold warehouse in T-SQL that integrates CRM and ERP data from six CSV
+                files into a star schema, backed by data-quality checks.
+              </p>
+              <div class="chips chips--sm"><span class="chip">SQL Server</span><span class="chip">T-SQL</span><span class="chip">ETL</span></div>
+              <p class="card__meta">6 CSV files · 3 layers · star schema</p>
+              <span class="card__cta">Read case study <i class="bi bi-arrow-right"></i></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section section--alt" id="contact">
+      <div class="container contact">
+        <div class="reveal">
+          <p class="eyebrow">Contact</p>
+          <h2 class="section-title">Let's talk data.</h2>
+          <p class="section__sub">Open to internships, collaborations, and conversations about data engineering.</p>
+        </div>
+
+        <div class="contact__links reveal" data-delay="100">
+          <a class="link-row" href="mailto:putrilenggogenni@gmail.com"><i class="bi bi-envelope"></i><span>putrilenggogenni@gmail.com</span><i class="bi bi-arrow-up-right"></i></a>
+          <a class="link-row" href="https://www.linkedin.com/in/putrilenggogenni/" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i><span>linkedin.com/in/putrilenggogenni</span><i class="bi bi-arrow-up-right"></i></a>
+          <a class="link-row" href="https://github.com/putrilenggogenni" target="_blank" rel="noopener"><i class="bi bi-github"></i><span>github.com/putrilenggogenni</span><i class="bi bi-arrow-up-right"></i></a>
+          <a class="link-row" href="https://www.instagram.com/putrilenggogenni" target="_blank" rel="noopener"><i class="bi bi-instagram"></i><span>@putrilenggogenni</span><i class="bi bi-arrow-up-right"></i></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year">2026</span> Lenggo Genni · Built with plain HTML, CSS, and JavaScript.</p>
+    </div>
+  </footer>
+
+  <!-- ============ CASE STUDY PANEL ============ -->
+  <div class="panel" id="panel" role="dialog" aria-modal="true" aria-labelledby="panel-crumb" hidden>
+    <div class="panel__bar">
+      <button class="panel__back" id="panel-back" type="button"><i class="bi bi-arrow-left"></i> Back to projects</button>
+      <span class="panel__crumb" id="panel-crumb"></span>
+      <button class="panel__close" id="panel-close" type="button" aria-label="Close case study"><i class="bi bi-x-lg"></i></button>
+      <div class="panel__progress" aria-hidden="true"><span id="panel-progress"></span></div>
+    </div>
+    <div class="panel__scroll" id="panel-scroll">
+      <div class="panel__content" id="panel-content"></div>
+    </div>
+  </div>
+
+  <!-- Lightbox for diagrams -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged image" hidden>
+    <button class="lightbox__close" id="lightbox-close" type="button" aria-label="Close image"><i class="bi bi-x-lg"></i></button>
+    <img id="lightbox-img" alt="" />
+  </div>
+
+  <!-- ============ TEMPLATE: LAKEHOUSE ============ -->
+  <template id="tpl-lakehouse">
+    <article class="cs">
+      <header class="cs__hero">
+        <p class="cs__eyebrow">Team project · Data lakehouse course</p>
+        <h1 class="cs__title">AdventureWorks Data Lakehouse</h1>
+        <p class="cs__lede">
+          One platform for data that lived in four different places: online sales in PostgreSQL, offline sales in Excel,
+          customer reviews in JSON, and store visits in CSV. Everything flows through Raw, Silver, and Gold layers
+          into a galaxy-schema warehouse and Power BI.
+        </p>
+        <dl class="cs__meta">
+          <div><dt>My role</dt><dd>Pipeline architecture, Python ETL scripts, data warehouse design and loading, and the Sales dashboard.</dd></div>
+          <div><dt>Stack</dt><dd>PostgreSQL, Python (pandas, SQLAlchemy, PyArrow), Parquet, Power BI</dd></div>
+          <div><dt>Code</dt><dd><a href="https://github.com/putrilenggogenni/finalproject_data_lakehouse" target="_blank" rel="noopener">GitHub repository <i class="bi bi-arrow-up-right"></i></a></dd></div>
+        </dl>
+        <div class="cs__stats">
+          <div class="stat"><span class="stat__num" data-count="4">4</span><span class="stat__label">source systems</span></div>
+          <div class="stat"><span class="stat__num" data-count="3">3</span><span class="stat__label">lakehouse layers</span></div>
+          <div class="stat"><span class="stat__num" data-count="8">8</span><span class="stat__label">warehouse tables</span></div>
+          <div class="stat"><span class="stat__num" data-count="30">30</span><span class="stat__label">daily JSON files</span></div>
+        </div>
+      </header>
+
+      <div class="cs__layout">
+        <aside class="cs__toc" aria-label="Sections"></aside>
+
+        <div class="cs__main">
+          <section class="cs__section reveal" data-section="overview" data-title="Overview">
+            <h2 class="cs__h"><span class="cs__num">01</span> Overview</h2>
+            <p>
+              Company data rarely sits in one place or one format. Online transactions live in an operational database,
+              branch sales arrive as spreadsheets, and external signals such as social-media reviews or store-visit counts
+              come as flat files. Analyzing them together is hard without a common home.
+            </p>
+            <p>
+              This project builds that home: a lakehouse with Raw, Silver, and Gold layers, loaded into a dimensional
+              warehouse and visualized in Power BI.
+            </p>
+            <ul class="checks">
+              <li>Integrate data from multiple sources and formats.</li>
+              <li>Clean and standardize it layer by layer with repeatable Python scripts.</li>
+              <li>Model it dimensionally so sales, sentiment, and store traffic can be analyzed together.</li>
+            </ul>
+          </section>
+
+          <section class="cs__section reveal" data-section="sources" data-title="Data sources">
+            <h2 class="cs__h"><span class="cs__num">02</span> Data sources</h2>
+            <div class="table-wrap">
+              <table class="table">
+                <thead><tr><th>Source</th><th>Format</th><th>What it holds</th></tr></thead>
+                <tbody>
+                  <tr><td>AdventureWorks online sales</td><td>PostgreSQL</td><td>Online sales transactions from the operational database</td></tr>
+                  <tr><td>Offline sales</td><td>Excel (.xlsx)</td><td>Offline orders extracted from AdventureWorks to simulate branch spreadsheets</td></tr>
+                  <tr><td>Twitter reviews</td><td>JSON (30 daily files)</td><td>Customer reviews with like, reply, retweet, and quote counts</td></tr>
+                  <tr><td>Store traffic</td><td>CSV</td><td>Daily visitor counts for five branch stores</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="note"><i class="bi bi-info-circle"></i> The Twitter and store-traffic datasets are synthetic: generated with scripts to simulate external data sources.</p>
+          </section>
+
+          <section class="cs__section reveal" data-section="architecture" data-title="Architecture">
+            <h2 class="cs__h"><span class="cs__num">03</span> Architecture</h2>
+            <p>All four sources land in the Raw layer. Online sales also load straight into the warehouse from the operational database.</p>
+            <figure class="figure diagram">
+              <div class="diagram__scroll">
+                <svg viewBox="0 0 880 300" class="dg" role="img" aria-labelledby="lh-dg-title">
+                  <title id="lh-dg-title">Four sources feed the Raw, Silver, and Gold layers, then a data warehouse and Power BI. PostgreSQL also loads directly into the warehouse.</title>
+
+                  <!-- sources -->
+                  <rect x="10" y="50"  width="110" height="40" rx="8" class="dg-box dg-src"/><text x="65" y="75"  class="dg-label" text-anchor="middle">PostgreSQL</text>
+                  <rect x="10" y="110" width="110" height="40" rx="8" class="dg-box dg-src"/><text x="65" y="135" class="dg-label" text-anchor="middle">Excel</text>
+                  <rect x="10" y="170" width="110" height="40" rx="8" class="dg-box dg-src"/><text x="65" y="195" class="dg-label" text-anchor="middle">JSON</text>
+                  <rect x="10" y="230" width="110" height="40" rx="8" class="dg-box dg-src"/><text x="65" y="255" class="dg-label" text-anchor="middle">CSV</text>
+
+                  <path class="dg-line flow" d="M120 70  C145 70  145 160 170 160"/>
+                  <path class="dg-line flow" d="M120 130 C145 130 145 160 170 160"/>
+                  <path class="dg-line flow" d="M120 190 C145 190 145 160 170 160"/>
+                  <path class="dg-line flow" d="M120 250 C145 250 145 160 170 160"/>
+
+                  <!-- direct online sales -->
+                  <path class="dg-line dg-line--dashed flow" d="M65 50 C65 -5 675 -5 675 115"/>
+                  <text x="370" y="22" class="dg-sub" text-anchor="middle">online sales loaded directly</text>
+
+                  <!-- layers -->
+                  <rect x="170" y="115" width="100" height="90" rx="12" class="dg-box dg-raw"/>
+                  <text x="220" y="156" class="dg-label" text-anchor="middle">Raw</text><text x="220" y="176" class="dg-sub" text-anchor="middle">as-is files</text>
+                  <rect x="320" y="115" width="100" height="90" rx="12" class="dg-box dg-silver"/>
+                  <text x="370" y="156" class="dg-label" text-anchor="middle">Silver</text><text x="370" y="176" class="dg-sub" text-anchor="middle">clean · Parquet</text>
+                  <rect x="470" y="115" width="100" height="90" rx="12" class="dg-box dg-gold"/>
+                  <text x="520" y="156" class="dg-label" text-anchor="middle">Gold</text><text x="520" y="176" class="dg-sub" text-anchor="middle">analytic marts</text>
+                  <rect x="620" y="115" width="110" height="90" rx="12" class="dg-box dg-dw"/>
+                  <text x="675" y="156" class="dg-label" text-anchor="middle">Warehouse</text><text x="675" y="176" class="dg-sub" text-anchor="middle">galaxy schema</text>
+                  <rect x="780" y="115" width="90" height="90" rx="12" class="dg-box dg-bi"/>
+                  <text x="825" y="156" class="dg-label" text-anchor="middle">Power BI</text><text x="825" y="176" class="dg-sub" text-anchor="middle">dashboards</text>
+
+                  <path class="dg-line flow" d="M270 160 H320"/>
+                  <path class="dg-line flow" d="M420 160 H470"/>
+                  <path class="dg-line flow" d="M570 160 H620"/>
+                  <path class="dg-line flow" d="M730 160 H780"/>
+                </svg>
+              </div>
+            </figure>
+          </section>
+
+          <section class="cs__section reveal" data-section="pipeline" data-title="Pipeline">
+            <h2 class="cs__h"><span class="cs__num">04</span> The three layers</h2>
+            <div class="layers">
+              <div class="layer layer--raw">
+                <h3>Raw</h3>
+                <p class="layer__scripts">ingest_*.py</p>
+                <p>Data stored exactly as it arrives, so every later step can be audited and replayed.</p>
+                <ul>
+                  <li>Offline orders pulled from PostgreSQL (header and detail joined) into Excel</li>
+                  <li>Twitter reviews generated as 30 daily JSON files</li>
+                  <li>Store traffic generated as one CSV</li>
+                </ul>
+              </div>
+              <div class="layer layer--silver">
+                <h3>Silver</h3>
+                <p class="layer__scripts">store_*.py</p>
+                <p>Cleaned, typed, and standardized, then converted to Parquet.</p>
+                <ul>
+                  <li>Remove duplicates, including tweets by tweet ID</li>
+                  <li>Flatten nested JSON metrics into columns</li>
+                  <li>Fix data types and standardize column names</li>
+                </ul>
+              </div>
+              <div class="layer layer--gold">
+                <h3>Gold</h3>
+                <p class="layer__scripts">view_*.py</p>
+                <p>Analytics-ready datasets shaped for the warehouse and dashboards.</p>
+                <ul>
+                  <li>Sales mart with a computed sales amount</li>
+                  <li>Rule-based tweet sentiment, product review summary, and product ranking</li>
+                  <li>Traffic summary with High, Medium, and Low levels</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="cs__section reveal" data-section="warehouse" data-title="Warehouse">
+            <h2 class="cs__h"><span class="cs__num">05</span> Warehouse design</h2>
+            <p>
+              The warehouse uses a <strong>galaxy schema</strong>: three fact tables for three business processes
+              (sales, tweet sentiment, store traffic) that share dimensions. <code>dim_date</code> serves all three facts, and
+              <code>dim_product</code> connects sales with customer sentiment, so a product's revenue can be read next to what customers say about it.
+            </p>
+            <figure class="figure zoomable">
+              <img src="assets/img/lakehouse-galaxy-schema.webp" alt="Galaxy schema with fact_sales, fact_twitter_sentiment, fact_store_traffic and five dimension tables" width="1067" height="726" loading="lazy" />
+              <figcaption class="figcap">Galaxy schema: 3 fact tables and 5 dimensions. Click to enlarge.</figcaption>
+            </figure>
+            <p>
+              Loading is done with Python scripts into a PostgreSQL warehouse schema: dimensions first, then facts.
+              One deliberate choice: the <code>traffic_level</code> attribute stays in the Gold layer but is not loaded into the
+              warehouse, because it can always be recomputed from <code>visitor_count</code>.
+            </p>
+          </section>
+
+          <section class="cs__section reveal" data-section="dashboards" data-title="Dashboards">
+            <h2 class="cs__h"><span class="cs__num">06</span> Dashboards</h2>
+            <p>
+              Three Power BI dashboards sit on the warehouse: Sales, Sentiment, and Store Traffic. I built the Sales dashboard
+              (revenue trend, category contribution, online vs. offline); my teammates built the two below.
+            </p>
+            <figure class="figure zoomable">
+              <img src="assets/img/lakehouse-dashboard-sentiment.webp" alt="Customer sentiment dashboard in Power BI" width="1442" height="815" loading="lazy" />
+              <figcaption class="figcap">Sentiment dashboard: 1,000 tweets, 73.5% neutral, 23.3% positive, 3.2% negative (synthetic data).</figcaption>
+            </figure>
+            <figure class="figure zoomable">
+              <img src="assets/img/lakehouse-dashboard-traffic.webp" alt="Store traffic dashboard in Power BI" width="1445" height="813" loading="lazy" />
+              <figcaption class="figcap">Store traffic dashboard: five stores, about 27 thousand visits, Seattle highest and Vancouver lowest (synthetic data).</figcaption>
+            </figure>
+          </section>
+
+          <section class="cs__section reveal" data-section="learnings" data-title="Takeaways">
+            <h2 class="cs__h"><span class="cs__num">07</span> Takeaways</h2>
+            <ul class="checks">
+              <li><strong>Keep raw data untouched.</strong> A raw layer that never changes makes every transformation auditable and repeatable.</li>
+              <li><strong>Share dimensions across processes.</strong> Conformed dimensions are what make cross-domain questions cheap to answer.</li>
+              <li><strong>Keep derived values out of the warehouse.</strong> If it can be recomputed, store the source and compute it on demand.</li>
+              <li><strong>Plan for messy shapes.</strong> Nested JSON, mixed formats, and duplicates are normal, so the Silver layer exists to absorb them.</li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <!-- ============ TEMPLATE: SQL DATA WAREHOUSE ============ -->
+  <template id="tpl-sqldwh">
+    <article class="cs">
+      <header class="cs__hero">
+        <p class="cs__eyebrow">Self-learning project · Data warehousing</p>
+        <h1 class="cs__title">SQL Server Data Warehouse</h1>
+        <p class="cs__lede">
+          A Bronze–Silver–Gold warehouse built entirely in T-SQL. CRM and ERP data arrives as six CSV files, is cleaned
+          and integrated through stored procedures, and ends as a star schema ready for reporting.
+        </p>
+        <dl class="cs__meta">
+          <div><dt>Context</dt><dd>Built while following the DataWithBaraa SQL Data Warehouse course (MIT license). The dataset and architecture come from the course; I wrote and ran the code to learn the end-to-end process.</dd></div>
+          <div><dt>Stack</dt><dd>Microsoft SQL Server, T-SQL, stored procedures</dd></div>
+          <div><dt>Code</dt><dd><a href="https://github.com/putrilenggogenni/sql-datawarehouse-project" target="_blank" rel="noopener">GitHub repository <i class="bi bi-arrow-up-right"></i></a></dd></div>
+        </dl>
+        <div class="cs__stats">
+          <div class="stat"><span class="stat__num" data-count="6">6</span><span class="stat__label">source CSV files</span></div>
+          <div class="stat"><span class="stat__num" data-count="3">3</span><span class="stat__label">warehouse layers</span></div>
+          <div class="stat"><span class="stat__num" data-count="60398">60,398</span><span class="stat__label">sales rows loaded</span></div>
+          <div class="stat"><span class="stat__num" data-count="3">3</span><span class="stat__label">gold views</span></div>
+        </div>
+      </header>
+
+      <div class="cs__layout">
+        <aside class="cs__toc" aria-label="Sections"></aside>
+
+        <div class="cs__main">
+          <section class="cs__section reveal" data-section="overview" data-title="Overview">
+            <h2 class="cs__h"><span class="cs__num">01</span> Overview</h2>
+            <p>
+              A bike-shop business keeps customers, products, and sales in a CRM, and extra customer and category details in an ERP.
+              The goal: combine both into one clean, trustworthy model that analysts can query without worrying about
+              inconsistent codes, stray spaces, or mismatched keys.
+            </p>
+            <ul class="checks">
+              <li>Load raw files into SQL Server with repeatable stored procedures.</li>
+              <li>Clean, standardize, and enrich the data in a Silver layer.</li>
+              <li>Expose a star schema in the Gold layer and verify it with quality checks.</li>
+            </ul>
+          </section>
+
+          <section class="cs__section reveal" data-section="dataset" data-title="Dataset">
+            <h2 class="cs__h"><span class="cs__num">02</span> Dataset</h2>
+            <div class="table-wrap">
+              <table class="table">
+                <thead><tr><th>System</th><th>File</th><th>Content</th><th class="num">Rows</th></tr></thead>
+                <tbody>
+                  <tr><td>CRM</td><td>cust_info</td><td>Customers</td><td class="num">18,493</td></tr>
+                  <tr><td>CRM</td><td>prd_info</td><td>Products with price history</td><td class="num">397</td></tr>
+                  <tr><td>CRM</td><td>sales_details</td><td>Sales transactions</td><td class="num">60,398</td></tr>
+                  <tr><td>ERP</td><td>CUST_AZ12</td><td>Birthdate and gender</td><td class="num">18,483</td></tr>
+                  <tr><td>ERP</td><td>LOC_A101</td><td>Customer country</td><td class="num">18,484</td></tr>
+                  <tr><td>ERP</td><td>PX_CAT_G1V2</td><td>Product categories</td><td class="num">35</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="note"><i class="bi bi-info-circle"></i> The data is intentionally messy: stray spaces, one-letter codes, dates stored as integers, empty values, and keys formatted differently in each system.</p>
+          </section>
+
+          <section class="cs__section reveal" data-section="architecture" data-title="Architecture">
+            <h2 class="cs__h"><span class="cs__num">03</span> Architecture</h2>
+            <figure class="figure diagram">
+              <div class="diagram__scroll">
+                <svg viewBox="0 0 880 300" class="dg" role="img" aria-labelledby="dw-dg-title">
+                  <title id="dw-dg-title">CRM and ERP files flow into Bronze tables, Silver tables, and Gold views in SQL Server, consumed by BI, SQL, and machine learning.</title>
+
+                  <rect x="10" y="80"  width="110" height="56" rx="10" class="dg-box dg-src"/><text x="65" y="113" class="dg-label" text-anchor="middle">CRM files</text>
+                  <rect x="10" y="164" width="110" height="56" rx="10" class="dg-box dg-src"/><text x="65" y="197" class="dg-label" text-anchor="middle">ERP files</text>
+                  <path class="dg-line flow" d="M120 108 C145 108 145 150 170 150"/>
+                  <path class="dg-line flow" d="M120 192 C145 192 145 150 170 150"/>
+
+                  <rect x="170" y="85" width="140" height="130" rx="12" class="dg-box dg-raw"/>
+                  <text x="240" y="130" class="dg-label" text-anchor="middle">Bronze</text>
+                  <text x="240" y="152" class="dg-sub" text-anchor="middle">6 raw tables</text>
+                  <text x="240" y="172" class="dg-sub" text-anchor="middle">BULK INSERT</text>
+
+                  <rect x="370" y="85" width="140" height="130" rx="12" class="dg-box dg-silver"/>
+                  <text x="440" y="130" class="dg-label" text-anchor="middle">Silver</text>
+                  <text x="440" y="152" class="dg-sub" text-anchor="middle">6 clean tables</text>
+                  <text x="440" y="172" class="dg-sub" text-anchor="middle">standardized</text>
+
+                  <rect x="570" y="85" width="140" height="130" rx="12" class="dg-box dg-gold"/>
+                  <text x="640" y="130" class="dg-label" text-anchor="middle">Gold</text>
+                  <text x="640" y="152" class="dg-sub" text-anchor="middle">3 views</text>
+                  <text x="640" y="172" class="dg-sub" text-anchor="middle">star schema</text>
+
+                  <rect x="770" y="100" width="100" height="100" rx="12" class="dg-box dg-bi"/>
+                  <text x="820" y="146" class="dg-label" text-anchor="middle">Consume</text>
+                  <text x="820" y="166" class="dg-sub" text-anchor="middle">BI · SQL · ML</text>
+
+                  <path class="dg-line flow" d="M310 150 H370"/>
+                  <path class="dg-line flow" d="M510 150 H570"/>
+                  <path class="dg-line flow" d="M710 150 H770"/>
+                </svg>
+              </div>
+            </figure>
+            <figure class="figure zoomable">
+              <img src="assets/img/sqldwh-data-flow.webp" alt="Data lineage from CRM and ERP files through bronze and silver tables to gold views" width="1122" height="592" loading="lazy" />
+              <figcaption class="figcap">Data lineage: each source table's path to <code>fact_sales</code>, <code>dim_customers</code>, and <code>dim_products</code>. Click to enlarge.</figcaption>
+            </figure>
+          </section>
+
+          <section class="cs__section reveal" data-section="layers" data-title="Layers">
+            <h2 class="cs__h"><span class="cs__num">04</span> The three layers</h2>
+            <div class="layers">
+              <div class="layer layer--raw">
+                <h3>Bronze</h3>
+                <p class="layer__scripts">bronze.load_bronze</p>
+                <p>Raw tables loaded as-is from the CSV files.</p>
+                <ul>
+                  <li>Truncate and reload with <code>BULK INSERT</code></li>
+                  <li>Source folder passed in as a procedure parameter</li>
+                  <li>Per-table timing and <code>TRY…CATCH</code> error reporting</li>
+                </ul>
+              </div>
+              <div class="layer layer--silver">
+                <h3>Silver</h3>
+                <p class="layer__scripts">silver.load_silver</p>
+                <p>Cleaned and standardized data, ready to join.</p>
+                <ul>
+                  <li>Keep the latest record per customer (<code>ROW_NUMBER</code>)</li>
+                  <li>Trim text and decode one-letter codes into readable values</li>
+                  <li>Derive category and product keys from a composite key</li>
+                  <li>Convert integer dates to <code>DATE</code> and repair inconsistent sales and prices</li>
+                  <li>Align customer keys that differ between CRM and ERP</li>
+                </ul>
+              </div>
+              <div class="layer layer--gold">
+                <h3>Gold</h3>
+                <p class="layer__scripts">gold.* views</p>
+                <p>Business-ready star schema exposed as views.</p>
+                <ul>
+                  <li><code>dim_customers</code> merges CRM with ERP details</li>
+                  <li><code>dim_products</code> keeps only current product versions</li>
+                  <li><code>fact_sales</code> links to both through surrogate keys</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="cs__section reveal" data-section="quality" data-title="Quality checks">
+            <h2 class="cs__h"><span class="cs__num">05</span> Data quality checks</h2>
+            <p>Each layer has SQL checks that are expected to return no rows. They are what let me trust the model before anyone reports on it.</p>
+            <div class="two-col">
+              <div class="panel-box">
+                <h3>Silver</h3>
+                <ul class="checks checks--tight">
+                  <li>Null or duplicate primary keys</li>
+                  <li>Unwanted leading and trailing spaces</li>
+                  <li>Consistent standardized values</li>
+                  <li>Valid date order</li>
+                  <li>Sales equals quantity × price</li>
+                </ul>
+              </div>
+              <div class="panel-box">
+                <h3>Gold</h3>
+                <ul class="checks checks--tight">
+                  <li>Unique surrogate keys in each dimension</li>
+                  <li>Unique natural keys behind them</li>
+                  <li>Every fact row finds its dimension rows</li>
+                  <li>No row fan-out: the fact table has as many rows as its Silver source</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="cs__section reveal" data-section="learnings" data-title="Takeaways">
+            <h2 class="cs__h"><span class="cs__num">06</span> Takeaways</h2>
+            <ul class="checks">
+              <li><strong>Layers localize problems.</strong> When a number looks wrong, the layer boundaries tell you where to look first.</li>
+              <li><strong>Keys cause most integration bugs.</strong> Aligning identifiers across systems matters more than any single transformation.</li>
+              <li><strong>Test the warehouse, not just the code.</strong> Checks for duplicates, orphans, and fan-out catch what a successful run cannot.</li>
+              <li><strong>Learning from a course still teaches.</strong> Rebuilding it myself made each design decision something I can explain and defend.</li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
