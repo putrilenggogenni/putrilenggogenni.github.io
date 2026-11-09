@@ -43,13 +43,6 @@
     <section class="hero" id="top">
       <div class="container hero__grid">
         <div class="hero__text">
-          <img
-            src="lenggo.jpg"
-            alt="Portrait of Lenggo Genni"
-            class="hero__avatar"
-            width="88" height="88"
-            onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'hero__avatar hero__avatar--fallback',textContent:'LG'}))"
-          />
           <p class="eyebrow">Information Systems · ITS</p>
           <h1 class="hero__name">Lenggo <em>Genni</em></h1>
           <p class="hero__role">Aspiring Data Engineer</p>
@@ -62,36 +55,19 @@
           </div>
         </div>
 
-        <div class="hero__visual" aria-hidden="true">
-          <p class="hero__visual-label">raw → silver → gold</p>
-          <svg viewBox="0 0 420 220" class="hero-flow">
-            <!-- sources -->
-            <g class="hf-src">
-              <circle cx="22" cy="48" r="6"/><circle cx="22" cy="86" r="6"/>
-              <circle cx="22" cy="124" r="6"/><circle cx="22" cy="162" r="6"/>
-            </g>
-            <path class="hf-line hf-flow" d="M28 48 C60 48 60 105 96 105"/>
-            <path class="hf-line hf-flow" d="M28 86 C60 86 60 105 96 105"/>
-            <path class="hf-line hf-flow" d="M28 124 C60 124 60 105 96 105"/>
-            <path class="hf-line hf-flow" d="M28 162 C60 162 60 105 96 105"/>
-
-            <rect x="96"  y="70" width="68" height="70" rx="10" class="hf-box hf-raw"/>
-            <rect x="196" y="70" width="68" height="70" rx="10" class="hf-box hf-silver"/>
-            <rect x="296" y="70" width="68" height="70" rx="10" class="hf-box hf-gold"/>
-            <path class="hf-line hf-flow" d="M164 105 H196"/>
-            <path class="hf-line hf-flow" d="M264 105 H296"/>
-            <path class="hf-line hf-flow" d="M364 105 H396"/>
-            <g class="hf-bars"><rect x="398" y="96" width="5" height="18" rx="1.5"/><rect x="406" y="86" width="5" height="28" rx="1.5"/><rect x="414" y="76" width="5" height="38" rx="1.5"/></g>
-
-            <text x="130" y="161" text-anchor="middle" class="hf-text">raw</text>
-            <text x="230" y="161" text-anchor="middle" class="hf-text">silver</text>
-            <text x="330" y="161" text-anchor="middle" class="hf-text">gold</text>
-            <text x="130" y="110" text-anchor="middle" class="hf-glyph">{ }</text>
-            <text x="230" y="110" text-anchor="middle" class="hf-glyph">▦</text>
-            <text x="330" y="110" text-anchor="middle" class="hf-glyph">★</text>
-          </svg>
-          <p class="hero__visual-sub">Medallion architecture, the pattern behind my projects.</p>
-        </div>
+        <figure class="hero__portrait">
+          <img
+            src="lenggo.jpg"
+            alt="Portrait of Lenggo Genni"
+            class="hero__photo"
+            width="520" height="650"
+            onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'hero__photo hero__photo--fallback',textContent:'LG'}))"
+          />
+          <figcaption class="hero__caption">
+            <span class="hero__caption-dot"></span>
+            Information Systems · ITS
+          </figcaption>
+        </figure>
       </div>
     </section>
 
@@ -165,7 +141,7 @@
       </div>
     </section>
 
-    <!-- PROJECTS -->
+        <!-- PROJECTS -->
     <section class="section" id="projects">
       <div class="container">
         <div class="section__head reveal">
@@ -208,6 +184,48 @@
               <span class="card__cta">Read case study <i class="bi bi-arrow-right"></i></span>
             </div>
           </a>
+
+          <a class="card card--wide reveal" href="#p-landslide">
+            <div class="card__media">
+              <img src="assets/img/landslide-f1-comparison.webp" alt="F1-score comparison of ten classifiers for landslide vulnerability" width="889" height="368" loading="lazy" />
+            </div>
+            <div class="card__body">
+              <span class="card__tag">Team project · Data pipeline + machine learning</span>
+              <h3 class="card__title">Landslide Susceptibility Classification</h3>
+              <p class="card__desc">
+                An end-to-end pipeline from 3,477 raw BNPB disaster records to geocoded, satellite-enriched
+                sub-district features, followed by a ten-model comparison on an extremely imbalanced target.
+              </p>
+              <div class="chips chips--sm"><span class="chip">Python</span><span class="chip">Google Earth Engine</span><span class="chip">scikit-learn</span><span class="chip">imbalanced-learn</span></div>
+              <p class="card__meta">3,477 events → 3,845 modeling rows · 10 models</p>
+              <span class="card__cta">Read case study <i class="bi bi-arrow-right"></i></span>
+            </div>
+          </a>
+        </div>
+
+        <div class="section__head section__head--sub reveal">
+          <p class="eyebrow">Beyond data engineering</p>
+          <h3 class="section-subtitle">Design work.</h3>
+          <p class="section__sub">I also design user experiences, which keeps me thinking about the people on the other end of the data.</p>
+        </div>
+
+        <div class="projects">
+          <a class="card card--wide reveal" href="#p-dishup">
+            <div class="card__media">
+              <img src="assets/img/dishup-cover.webp" alt="Three screens of the DishUp food pre-order app" width="1300" height="846" loading="lazy" />
+            </div>
+            <div class="card__body">
+              <span class="card__tag">Team project · UX design</span>
+              <h3 class="card__title">DishUp!: Food Pre-order App</h3>
+              <p class="card__desc">
+                A mobile pre-order platform for buyers and sellers, taken from needfinding and concept sketches
+                to a medium-fidelity Figma prototype and a usability test with four participants.
+              </p>
+              <div class="chips chips--sm"><span class="chip">Figma</span><span class="chip">Needfinding</span><span class="chip">Usability testing</span></div>
+              <p class="card__meta">5 concepts · 2 user roles · 4 test participants</p>
+              <span class="card__cta">Read case study <i class="bi bi-arrow-right"></i></span>
+            </div>
+          </a>
         </div>
       </div>
     </section>
@@ -218,7 +236,7 @@
         <div class="reveal">
           <p class="eyebrow">Contact</p>
           <h2 class="section-title">Let's talk data.</h2>
-          <p class="section__sub">Open to internships, collaborations, and conversations about data engineering.</p>
+          <p class="section__sub">Always happy to talk about data engineering, projects, or collaboration.</p>
         </div>
 
         <div class="contact__links reveal" data-delay="100">
@@ -419,9 +437,13 @@
           <section class="cs__section reveal" data-section="dashboards" data-title="Dashboards">
             <h2 class="cs__h"><span class="cs__num">06</span> Dashboards</h2>
             <p>
-              Three Power BI dashboards sit on the warehouse: Sales, Sentiment, and Store Traffic. I built the Sales dashboard
-              (revenue trend, category contribution, online vs. offline); my teammates built the two below.
+              Three Power BI dashboards sit on the warehouse: Sales, Sentiment, and Store Traffic. I built the Sales dashboard;
+              my teammates built the other two.
             </p>
+            <figure class="figure zoomable">
+              <img src="assets/img/lakehouse-dashboard-sales.webp" alt="Executive sales overview dashboard in Power BI with revenue trend, category revenue, and channel split" width="1522" height="847" loading="lazy" />
+              <figcaption class="figcap">Sales dashboard: 110.37M total revenue from 31,465 orders. Bikes contribute 95M, and offline sales account for 73.4% of revenue versus 26.6% online. Click to enlarge.</figcaption>
+            </figure>
             <figure class="figure zoomable">
               <img src="assets/img/lakehouse-dashboard-sentiment.webp" alt="Customer sentiment dashboard in Power BI" width="1442" height="815" loading="lazy" />
               <figcaption class="figcap">Sentiment dashboard: 1,000 tweets, 73.5% neutral, 23.3% positive, 3.2% negative (synthetic data).</figcaption>
@@ -619,6 +641,393 @@
               <li><strong>Keys cause most integration bugs.</strong> Aligning identifiers across systems matters more than any single transformation.</li>
               <li><strong>Test the warehouse, not just the code.</strong> Checks for duplicates, orphans, and fan-out catch what a successful run cannot.</li>
               <li><strong>Learning from a course still teaches.</strong> Rebuilding it myself made each design decision something I can explain and defend.</li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <!-- ============ TEMPLATE: LANDSLIDE ============ -->
+  <template id="tpl-landslide">
+    <article class="cs">
+      <header class="cs__hero">
+        <p class="cs__eyebrow">Team project · Data pipeline + machine learning</p>
+        <h1 class="cs__title">Landslide Susceptibility Classification for Indonesian Sub-districts</h1>
+        <p class="cs__lede">
+          A pipeline that turns messy disaster-incident records into a modeling dataset: cleaned and geocoded at
+          sub-district level, enriched with terrain and climate data from Google Earth Engine, then used to compare
+          ten classifiers on an extremely imbalanced target.
+        </p>
+        <dl class="cs__meta">
+          <div><dt>Context</dt><dd>Final project for a predictive analytics and modeling course.</dd></div>
+          <!-- <div><dt>My role</dt><dd>Describe your part here.</dd></div> -->
+          <div><dt>Stack</dt><dd>Python, Google Earth Engine, Nominatim, pandas, scikit-learn, imbalanced-learn, XGBoost, LightGBM</dd></div>
+        </dl>
+        <div class="cs__stats">
+          <div class="stat"><span class="stat__num" data-count="3477">3,477</span><span class="stat__label">BNPB landslide events (2021–2025)</span></div>
+          <div class="stat"><span class="stat__num" data-count="3845">3,845</span><span class="stat__label">rows ready for modeling</span></div>
+          <div class="stat"><span class="stat__num" data-count="4">4</span><span class="stat__label">satellite-derived features</span></div>
+          <div class="stat"><span class="stat__num" data-count="10">10</span><span class="stat__label">classifiers compared</span></div>
+        </div>
+      </header>
+
+      <div class="cs__layout">
+        <aside class="cs__toc" aria-label="Sections"></aside>
+
+        <div class="cs__main">
+          <section class="cs__section reveal" data-section="overview" data-title="Overview">
+            <h2 class="cs__h"><span class="cs__num">01</span> Overview</h2>
+            <p>
+              Indonesia has one of the highest landslide rates in the world, yet vulnerability mapping is uneven and
+              often reactive. This project builds a reproducible, open-data pipeline from raw incident records to a
+              classifier that labels sub-districts as Low, Medium, or High vulnerability.
+            </p>
+            <ul class="checks">
+              <li>Clean and geocode landslide incidents published by BNPB, Indonesia's disaster agency.</li>
+              <li>Extract slope, elevation, rainfall, and land cover for each location with Google Earth Engine.</li>
+              <li>Build a transparent, literature-based vulnerability label.</li>
+              <li>Compare ten models under extreme class imbalance without leaking test data.</li>
+            </ul>
+          </section>
+
+          <section class="cs__section reveal" data-section="pipeline" data-title="Data pipeline">
+            <h2 class="cs__h"><span class="cs__num">02</span> Data pipeline</h2>
+            <figure class="figure diagram">
+              <div class="diagram__scroll">
+                <svg viewBox="0 0 880 200" class="dg" role="img" aria-labelledby="ls-dg-title">
+                  <title id="ls-dg-title">Pipeline from BNPB records through cleaning, geocoding, feature extraction, labeling, modeling, and evaluation.</title>
+                  <rect x="0"   y="60" width="112" height="80" rx="12" class="dg-box dg-src"/>
+                  <text x="56"  y="96"  class="dg-label" text-anchor="middle">BNPB</text><text x="56"  y="116" class="dg-sub" text-anchor="middle">3,477 events</text>
+                  <rect x="128" y="60" width="112" height="80" rx="12" class="dg-box dg-silver"/>
+                  <text x="184" y="96"  class="dg-label" text-anchor="middle">Clean</text><text x="184" y="116" class="dg-sub" text-anchor="middle">regex · expand</text>
+                  <rect x="256" y="60" width="112" height="80" rx="12" class="dg-box dg-silver"/>
+                  <text x="312" y="96"  class="dg-label" text-anchor="middle">Geocode</text><text x="312" y="116" class="dg-sub" text-anchor="middle">Nominatim</text>
+                  <rect x="384" y="60" width="112" height="80" rx="12" class="dg-box dg-silver"/>
+                  <text x="440" y="96"  class="dg-label" text-anchor="middle">Features</text><text x="440" y="116" class="dg-sub" text-anchor="middle">GEE · 5 km</text>
+                  <rect x="512" y="60" width="112" height="80" rx="12" class="dg-box dg-gold"/>
+                  <text x="568" y="96"  class="dg-label" text-anchor="middle">Label</text><text x="568" y="116" class="dg-sub" text-anchor="middle">composite score</text>
+                  <rect x="640" y="60" width="112" height="80" rx="12" class="dg-box dg-dw"/>
+                  <text x="696" y="96"  class="dg-label" text-anchor="middle">Model</text><text x="696" y="116" class="dg-sub" text-anchor="middle">10 classifiers</text>
+                  <rect x="768" y="60" width="112" height="80" rx="12" class="dg-box dg-bi"/>
+                  <text x="824" y="96"  class="dg-label" text-anchor="middle">Evaluate</text><text x="824" y="116" class="dg-sub" text-anchor="middle">5-fold CV</text>
+
+                  <path class="dg-line flow" d="M112 100 H128"/>
+                  <path class="dg-line flow" d="M240 100 H256"/>
+                  <path class="dg-line flow" d="M368 100 H384"/>
+                  <path class="dg-line flow" d="M496 100 H512"/>
+                  <path class="dg-line flow" d="M624 100 H640"/>
+                  <path class="dg-line flow" d="M752 100 H768"/>
+                </svg>
+              </div>
+            </figure>
+            <div class="layers">
+              <div class="layer layer--accent">
+                <h3>Clean</h3>
+                <p class="layer__scripts">BNPB incident table</p>
+                <p>Location strings mixed district names, villages, and noise in inconsistent formats.</p>
+                <ul>
+                  <li>Regex extraction of district names, expanding multi-district events into separate rows</li>
+                  <li>Multi-format parsing to strip RT/RW, GPS coordinates, and street names</li>
+                  <li>72 semi-manual fixes for typos and spelling, plus de-duplication</li>
+                </ul>
+              </div>
+              <div class="layer layer--accent">
+                <h3>Geocode</h3>
+                <p class="layer__scripts">Nominatim (OpenStreetMap)</p>
+                <p>Turning district names into coordinates for spatial analysis.</p>
+                <ul>
+                  <li>1,739 unique locations submitted</li>
+                  <li>1,518 matched (87.3%); 221 were not recognized and excluded</li>
+                </ul>
+              </div>
+              <div class="layer layer--accent">
+                <h3>Enrich</h3>
+                <p class="layer__scripts">Google Earth Engine Python API</p>
+                <p>Four environmental variables, each summarized in a 5 km buffer around every point.</p>
+                <ul>
+                  <li>Slope and elevation from SRTM</li>
+                  <li>Mean annual rainfall, 2021–2025, from CHIRPS</li>
+                  <li>Land cover class from Copernicus (100 m)</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="cs__section reveal" data-section="label" data-title="Building the label">
+            <h2 class="cs__h"><span class="cs__num">03</span> Building the label</h2>
+            <p>
+              The incident records contain no vulnerability class, so the label comes from a composite score. Each of
+              the four variables is converted to a 0–2 score using thresholds adapted from the literature, and the
+              scores are summed (0–8): Low is 0–2, Medium is 3–5, High is 6–8.
+            </p>
+            <div class="table-wrap">
+              <table class="table">
+                <thead><tr><th>Variable</th><th>Score 0</th><th>Score 1</th><th>Score 2</th></tr></thead>
+                <tbody>
+                  <tr><td>Slope</td><td>≤ 15°</td><td>15°–30°</td><td>&gt; 30°</td></tr>
+                  <tr><td>Annual rainfall</td><td>≤ 2,000 mm</td><td>2,000–2,500 mm</td><td>≥ 2,500 mm</td></tr>
+                  <tr><td>Elevation</td><td>≤ 200 m</td><td>200–1,000 m</td><td>≥ 1,000 m</td></tr>
+                  <tr><td>Land cover</td><td colspan="3">Scored by Copernicus class: closed forest is the most stable, built-up and sparse vegetation the least</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="note"><i class="bi bi-info-circle"></i> The label is a literature-based proxy used to train classifiers, not a validated hazard map. All four variables carry equal weight.</p>
+            <figure class="figure zoomable">
+              <img src="assets/img/landslide-class-distribution.webp" alt="Bar chart of class distribution: Medium dominates, Low is small, High is tiny" width="903" height="505" loading="lazy" />
+              <figcaption class="figcap">Resulting classes: Medium 3,527 (91.7%), Low 291 (7.6%), High 27 (0.7%), an imbalance of about 131 to 1. Click to enlarge.</figcaption>
+            </figure>
+          </section>
+
+          <section class="cs__section reveal" data-section="modeling" data-title="Modeling">
+            <h2 class="cs__h"><span class="cs__num">04</span> Modeling under imbalance</h2>
+            <p>
+              The modeling set has 14 features (four geospatial, six impact counts, two temporal, two administrative),
+              split 80/20 with stratification into 3,076 training and 769 test rows. Outliers were capped with the IQR
+              method instead of being dropped, and KNN and SVM received min-max scaling.
+            </p>
+            <div class="two-col">
+              <div class="panel-box">
+                <h3>SMOTE</h3>
+                <ul class="checks checks--tight">
+                  <li>KNN, Naive Bayes, Decision Tree, SVM</li>
+                  <li>Bagging, AdaBoost, Stacking</li>
+                </ul>
+              </div>
+              <div class="panel-box">
+                <h3>ADASYN</h3>
+                <ul class="checks checks--tight">
+                  <li>Random Forest, XGBoost, LightGBM</li>
+                  <li>Adds synthetic samples where the classes overlap most</li>
+                </ul>
+              </div>
+            </div>
+            <p>
+              Leakage was prevented by design: resampling only touches training data, and during 5-fold cross-validation
+              it runs inside an imbalanced-learn pipeline so each fold resamples on its own. The score columns used to
+              build the label were also dropped from the feature set.
+            </p>
+          </section>
+
+          <section class="cs__section reveal" data-section="results" data-title="Results">
+            <h2 class="cs__h"><span class="cs__num">05</span> Results</h2>
+            <div class="table-wrap">
+              <table class="table">
+                <thead><tr><th>Model</th><th class="num">F1 (test)</th><th class="num">F1 (5-fold CV)</th><th class="num">High recall</th></tr></thead>
+                <tbody>
+                  <tr><td>XGBoost</td><td class="num">0.9870</td><td class="num">0.9861 ± 0.0051</td><td class="num">4 / 5</td></tr>
+                  <tr><td>LightGBM</td><td class="num">0.9867</td><td class="num">0.9865 ± 0.0050</td><td class="num">3 / 5</td></tr>
+                  <tr><td>Bagging</td><td class="num">0.9810</td><td class="num">0.9804 ± 0.0054</td><td class="num">5 / 5</td></tr>
+                  <tr><td>Random Forest</td><td class="num">0.9787</td><td class="num">0.9819 ± 0.0042</td><td class="num">1 / 5</td></tr>
+                  <tr><td>Decision Tree</td><td class="num">0.9773</td><td class="num">0.9776 ± 0.0053</td><td class="num">5 / 5</td></tr>
+                  <tr><td>Stacking</td><td class="num">0.9764</td><td class="num">0.9744 ± 0.0078</td><td class="num">5 / 5</td></tr>
+                  <tr><td>KNN</td><td class="num">0.9085</td><td class="num">0.8993 ± 0.0104</td><td class="num">4 / 5</td></tr>
+                  <tr><td>SVM</td><td class="num">0.8952</td><td class="num">0.8882 ± 0.0077</td><td class="num">4 / 5</td></tr>
+                  <tr><td>AdaBoost</td><td class="num">0.8437</td><td class="num">0.6916 ± 0.2257</td><td class="num">0 / 5</td></tr>
+                  <tr><td>Naive Bayes</td><td class="num">0.2642</td><td class="num">0.3412 ± 0.0739</td><td class="num">3 / 5</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="figcap">F1 is weighted. "High recall" counts the High-vulnerability test samples each model found (there are only five).</p>
+
+            <figure class="figure zoomable">
+              <img src="assets/img/landslide-f1-comparison.webp" alt="Bar chart comparing F1-score of all ten models" width="889" height="368" loading="lazy" />
+              <figcaption class="figcap">Gradient boosting (XGBoost, LightGBM) led on overall F1; Naive Bayes was weakest because its independence assumption does not fit correlated terrain variables. Click to enlarge.</figcaption>
+            </figure>
+            <figure class="figure zoomable">
+              <img src="assets/img/landslide-cv-comparison.webp" alt="Single split versus stratified 5-fold cross-validation F1 for all models, with error bars" width="1389" height="589" loading="lazy" />
+              <figcaption class="figcap">Single split vs. 5-fold cross-validation: most models agree closely, while AdaBoost's wide error bar shows it is unstable. Click to enlarge.</figcaption>
+            </figure>
+            <figure class="figure zoomable">
+              <img src="assets/img/landslide-feature-importance.webp" alt="Random Forest feature importance, led by elevation, slope, and rainfall" width="988" height="489" loading="lazy" />
+              <figcaption class="figcap">Random Forest feature importance: elevation (0.30), slope (0.25), and rainfall (0.17) lead, while impact and administrative features contribute little. Click to enlarge.</figcaption>
+            </figure>
+          </section>
+
+          <section class="cs__section reveal" data-section="limits" data-title="Limitations">
+            <h2 class="cs__h"><span class="cs__num">06</span> Limitations</h2>
+            <ul class="checks">
+              <li><strong>The label is built from the same terrain and climate variables the models see.</strong> The score columns were removed to avoid direct leakage, but the high F1 scores mainly show how well models recover the scoring rule, not independent landslide prediction.</li>
+              <li><strong>Only 27 High samples (5 in the test set).</strong> Recall for that class moves in steps of 20 points, so differences between models there are not statistically meaningful.</li>
+              <li><strong>Geocoding loss.</strong> About 12.7% of unique locations could not be matched and were dropped.</li>
+              <li><strong>Temporal features</strong> may bias the model if it is used to predict future periods.</li>
+            </ul>
+          </section>
+
+          <section class="cs__section reveal" data-section="learnings" data-title="Takeaways">
+            <h2 class="cs__h"><span class="cs__num">07</span> Takeaways</h2>
+            <ul class="checks">
+              <li><strong>Treat the label as part of the pipeline.</strong> How the target is defined shapes every result downstream, so it deserves the same scrutiny as the model.</li>
+              <li><strong>Judge models where it matters.</strong> Accuracy hides the rare class; recall on High vulnerability is what a mitigation team would care about.</li>
+              <li><strong>Prevent leakage by construction.</strong> Resampling inside pipelines and dropping derived columns is safer than remembering to be careful.</li>
+              <li><strong>Geocoding is a data-quality bottleneck.</strong> Every unmatched place name is data lost before modeling even starts.</li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <!-- ============ TEMPLATE: DISHUP ============ -->
+  <template id="tpl-dishup">
+    <article class="cs">
+      <header class="cs__hero">
+        <p class="cs__eyebrow">Team project · UX design</p>
+        <h1 class="cs__title">DishUp!: Food Pre-order App</h1>
+        <p class="cs__lede">
+          A mobile platform that connects buyers and sellers around scheduled food pre-orders. The work covers
+          needfinding, five concept sketches, a medium-fidelity Figma prototype for two user roles, and a usability
+          test with four participants.
+        </p>
+        <dl class="cs__meta">
+          <div><dt>Context</dt><dd>Course assignment on low-fidelity prototyping and pilot usability testing (User Experience Design).</dd></div>
+          <!-- <div><dt>My role</dt><dd>Describe your part here.</dd></div> -->
+          <div><dt>Tools</dt><dd>Figma for the prototype; Zoom for moderated remote testing</dd></div>
+        </dl>
+        <div class="cs__stats">
+          <div class="stat"><span class="stat__num" data-count="5">5</span><span class="stat__label">concept directions explored</span></div>
+          <div class="stat"><span class="stat__num" data-count="2">2</span><span class="stat__label">user roles: buyer and seller</span></div>
+          <div class="stat"><span class="stat__num" data-count="4">4</span><span class="stat__label">usability test participants</span></div>
+          <div class="stat"><span class="stat__num" data-count="10">10</span><span class="stat__label">critical incidents logged</span></div>
+        </div>
+      </header>
+
+      <div class="cs__layout">
+        <aside class="cs__toc" aria-label="Sections"></aside>
+
+        <div class="cs__main">
+          <section class="cs__section reveal" data-section="overview" data-title="Overview">
+            <h2 class="cs__h"><span class="cs__num">01</span> Overview</h2>
+            <p>
+              Unlike instant food-delivery apps, DishUp! is built around <strong>pre-orders</strong>: food is produced and
+              delivered on a schedule agreed in advance. The goal is to reduce miscommunication, make order status
+              transparent, and help sellers organize production and delivery.
+            </p>
+            <p>
+              <strong>Value proposition:</strong> a connected pre-order process where buyers get what they need and sellers
+              manage orders in a more orderly way.
+            </p>
+          </section>
+
+          <section class="cs__section reveal" data-section="problem" data-title="Problem">
+            <h2 class="cs__h"><span class="cs__num">02</span> The problem</h2>
+            <p>Interviews and observation with people who buy or sell pre-order food surfaced pain points on both sides.</p>
+            <div class="two-col">
+              <div class="panel-box">
+                <h3>Buyers</h3>
+                <ul class="checks checks--tight">
+                  <li>Order status is hard to see</li>
+                  <li>Sellers reply late</li>
+                  <li>Product information is incomplete</li>
+                  <li>Changing schedule or location is difficult</li>
+                  <li>Pre-ordering means hopping from WhatsApp to a form</li>
+                </ul>
+              </div>
+              <div class="panel-box">
+                <h3>Sellers</h3>
+                <ul class="checks checks--tight">
+                  <li>Orders are managed manually through chat</li>
+                  <li>Customers ask the same questions repeatedly</li>
+                  <li>Production scheduling gets hard as orders grow</li>
+                  <li>Delivery times are poorly organized</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="cs__section reveal" data-section="concepts" data-title="Concepts">
+            <h2 class="cs__h"><span class="cs__num">03</span> Concepts and the final choice</h2>
+            <p>
+              Five directions were sketched, each with task flows for a simple, a moderate, and a complex task: an
+              integrated pre-order flow, chat-based ordering with a chatbot, a calendar-based system, a seller workflow
+              dashboard, and a reorder system. Two designs made the final comparison.
+            </p>
+            <div class="two-col">
+              <div class="panel-box">
+                <h3>Chosen: Integrated pre-order</h3>
+                <ul class="checks checks--tight">
+                  <li>Familiar to users of e-commerce apps</li>
+                  <li>Serves buyers and sellers together</li>
+                  <li>Complete pre-order flow with easy tracking</li>
+                  <li>Trade-off: more screens and a larger scope</li>
+                </ul>
+              </div>
+              <div class="panel-box">
+                <h3>Runner-up: Seller workflow dashboard</h3>
+                <ul class="checks checks--tight">
+                  <li>Detailed operational workflow</li>
+                  <li>Focused on seller needs</li>
+                  <li>Trade-off: does not solve the buyer-side problems</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="cs__section reveal" data-section="prototype" data-title="Prototype">
+            <h2 class="cs__h"><span class="cs__num">04</span> The prototype</h2>
+            <p>
+              The prototype supports two roles with separate navigation. Buyers explore sellers, view a product, check
+              out into a preorder window, and follow the order through a tracking timeline. Sellers get an overview
+              dashboard, order management with approve and reject, a "what to prepare" ingredient summary, a financial
+              view with cost of goods, delivery management, and a chatbot that can answer customers automatically.
+            </p>
+            <figure class="figure zoomable">
+              <img src="assets/img/dishup-buyer-flow.webp" alt="Four buyer screens: explore, product detail, checkout, and order tracking" width="1700" height="838" loading="lazy" />
+              <figcaption class="figcap">Buyer flow: explore, product detail, checkout, and order tracking. Click to enlarge.</figcaption>
+            </figure>
+            <figure class="figure zoomable">
+              <img src="assets/img/dishup-reschedule.webp" alt="Orders list and the reschedule order sheet with date and time slot selection" width="1300" height="842" loading="lazy" />
+              <figcaption class="figcap">The most complex task: rescheduling a delivery and following the request to approval. Click to enlarge.</figcaption>
+            </figure>
+          </section>
+
+          <section class="cs__section reveal" data-section="testing" data-title="Usability test">
+            <h2 class="cs__h"><span class="cs__num">05</span> Usability test</h2>
+            <p>
+              Four people who had bought or sold pre-order food (two buyers, two sellers) tested the interactive
+              prototype in moderated Zoom sessions, thinking aloud while the team observed.
+            </p>
+            <div class="table-wrap">
+              <table class="table">
+                <thead><tr><th>Role</th><th>Tasks given</th></tr></thead>
+                <tbody>
+                  <tr><td>Buyer (5)</td><td>Buy a product through payment, chat with the seller, reschedule an order, update the profile, view order status</td></tr>
+                  <tr><td>Seller (6)</td><td>Receive an order through delivery, turn on the chatbot, open a pre-order, manage delivery, add and edit a product, manage the store profile</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>
+              Each session had defined roles (facilitator, prototype operator, two observers, note taker, documentation),
+              and problems were logged as critical incidents rated on a 0–4 severity scale.
+            </p>
+          </section>
+
+          <section class="cs__section reveal" data-section="findings" data-title="Findings">
+            <h2 class="cs__h"><span class="cs__num">06</span> Findings</h2>
+            <div class="table-wrap">
+              <table class="table">
+                <thead><tr><th>Finding</th><th class="num">Severity</th></tr></thead>
+                <tbody>
+                  <tr><td>Checkout needs too many steps (address and payment before confirming)</td><td class="num">3 · major</td></tr>
+                  <tr><td>Some buttons were not linked to any screen</td><td class="num">3 · major</td></tr>
+                  <tr><td>Prototype flow incomplete, making the journey hard to follow</td><td class="num">3 · major</td></tr>
+                  <tr><td>No way to go back or cancel while ordering</td><td class="num">2 · minor</td></tr>
+                  <tr><td>English interface terms slowed understanding</td><td class="num">2 · minor</td></tr>
+                  <tr><td>Seller overview ordering could surface key information sooner</td><td class="num">1 · cosmetic</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="note"><i class="bi bi-check-circle"></i> What worked: order and delivery management were easy for sellers to understand, tracking information was found without help, and the main navigation tasks were completed.</p>
+          </section>
+
+          <section class="cs__section reveal" data-section="next" data-title="Next iteration">
+            <h2 class="cs__h"><span class="cs__num">07</span> Next iteration</h2>
+            <ul class="checks">
+              <li><strong>Shorten checkout.</strong> Show only the information needed at each step.</li>
+              <li><strong>Complete the flows.</strong> Link every button and add back and cancel paths.</li>
+              <li><strong>Localize the language</strong> so terms fit the target users.</li>
+              <li><strong>Add cost per ingredient</strong> to the "what to prepare" view to support production planning.</li>
+              <li><strong>Refresh the visual identity</strong> with colors and food imagery that suit local cuisine.</li>
             </ul>
           </section>
         </div>
