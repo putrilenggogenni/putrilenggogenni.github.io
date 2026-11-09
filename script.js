@@ -18,7 +18,9 @@
   /* ---------- config ---------- */
   const PROJECTS = {
     'lakehouse': { template: 'tpl-lakehouse', title: 'AdventureWorks Data Lakehouse' },
-    'sql-dwh':   { template: 'tpl-sqldwh',    title: 'SQL Server Data Warehouse' }
+    'sql-dwh':   { template: 'tpl-sqldwh',    title: 'SQL Server Data Warehouse' },
+    'landslide': { template: 'tpl-landslide', title: 'Landslide Susceptibility Classification' },
+    'dishup':    { template: 'tpl-dishup',    title: 'DishUp!: Food Pre-order App' }
   };
   const ORDER = Object.keys(PROJECTS);
 
