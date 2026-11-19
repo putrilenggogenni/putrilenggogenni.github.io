@@ -34,9 +34,25 @@
   const navToggle = $('#nav-toggle');
   const navLinks = $$('#nav-links a');
 
+  // sliding active-link indicator
+  const navIndicator = document.createElement('span');
+  navIndicator.className = 'nav__indicator';
+  const navLinksWrap = $('#nav-links');
+  if (navLinksWrap) navLinksWrap.appendChild(navIndicator);
+  const moveNavIndicator = (active) => {
+    if (!active) { navIndicator.style.opacity = '0'; return; }
+    navIndicator.style.left = active.offsetLeft + 'px';
+    navIndicator.style.width = active.offsetWidth + 'px';
+    navIndicator.style.opacity = '1';
+  };
+
   const onScroll = () => nav.classList.toggle('is-scrolled', window.scrollY > 8);
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', () => {
+    const active = navLinks.find(a => a.getAttribute('aria-current') === 'true');
+    if (active) moveNavIndicator(active);
+  });
 
   navToggle.addEventListener('click', () => {
     const open = nav.classList.toggle('is-open');
@@ -55,7 +71,9 @@
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
       navLinks.forEach(a => {
-        a.setAttribute('aria-current', String(a.getAttribute('href') === '#' + entry.target.id));
+        const isActive = a.getAttribute('href') === '#' + entry.target.id;
+        a.setAttribute('aria-current', String(isActive));
+        if (isActive) moveNavIndicator(a);
       });
     });
   }, { rootMargin: '-45% 0px -50% 0px' });
@@ -141,6 +159,9 @@
         a.textContent = sec.dataset.title;
         return a;
       }));
+      const marker = document.createElement('span');
+      marker.className = 'cs__toc-marker';
+      toc.appendChild(marker);
     }
 
     // "next project" footer
@@ -171,7 +192,10 @@
         obs.unobserve(el);
       });
     }, { root: scroller, threshold: 0.1 });
-    $$('.reveal', content).forEach(el => inPanel.observe(el));
+    $$('.reveal', content).forEach((el, i) => {
+      if (!el.dataset.delay) el.dataset.delay = String(i * 60);
+      inPanel.observe(el);
+    });
     observers.push(inPanel);
 
     // count-up when the stats come into view
@@ -194,7 +218,16 @@
       const tocObs = new IntersectionObserver(entries => {
         entries.forEach(entry => {
           if (!entry.isIntersecting) return;
-          links.forEach(a => a.classList.toggle('is-active', a.dataset.goto === entry.target.dataset.section));
+          const marker = $('.cs__toc-marker', content);
+          links.forEach(a => {
+            const isActive = a.dataset.goto === entry.target.dataset.section;
+            a.classList.toggle('is-active', isActive);
+            if (isActive && marker) {
+              marker.style.top = a.offsetTop + 'px';
+              marker.style.height = a.offsetHeight + 'px';
+              marker.classList.add('is-visible');
+            }
+          });
         });
       }, { root: scroller, rootMargin: '-15% 0px -70% 0px' });
       $$('[data-section]', content).forEach(sec => tocObs.observe(sec));
