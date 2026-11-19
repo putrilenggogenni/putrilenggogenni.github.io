@@ -20,7 +20,8 @@
     'lakehouse': { template: 'tpl-lakehouse', title: 'AdventureWorks Data Lakehouse' },
     'sql-dwh':   { template: 'tpl-sqldwh',    title: 'SQL Server Data Warehouse' },
     'landslide': { template: 'tpl-landslide', title: 'Landslide Susceptibility Classification' },
-    'dishup':    { template: 'tpl-dishup',    title: 'DishUp!: Food Pre-order App' }
+    'dishup':    { template: 'tpl-dishup',    title: 'DishUp!: Food Pre-order App' },
+    'notive':    { template: 'tpl-notive',    title: 'Notive: Personal Journal App' }
   };
   const ORDER = Object.keys(PROJECTS);
 

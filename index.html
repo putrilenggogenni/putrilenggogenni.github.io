@@ -114,6 +114,10 @@
                 <span class="stack__label">Practices</span>
                 <div class="chips"><span class="chip">ETL</span><span class="chip">Medallion architecture</span><span class="chip">Dimensional modeling</span><span class="chip">Data quality checks</span></div>
               </div>
+              <div class="stack__group">
+                <span class="stack__label">Also</span>
+                <div class="chips"><span class="chip">PHP</span><span class="chip">Laravel</span><span class="chip">MySQL</span></div>
+              </div>
             </div>
           </div>
 
@@ -207,12 +211,29 @@
 
         <div class="section__head section__head--sub reveal">
           <p class="eyebrow">Beyond data engineering</p>
-          <h3 class="section-subtitle">Design work.</h3>
-          <p class="section__sub">I also design user experiences, which keeps me thinking about the people on the other end of the data.</p>
+          <h3 class="section-subtitle">Software & design work.</h3>
+          <p class="section__sub">Beyond data engineering, I also build software and design user experiences, which keeps me thinking about the people on the other end of the data.</p>
         </div>
 
         <div class="projects">
-          <a class="card card--wide reveal" href="#p-dishup">
+          <a class="card reveal" href="#p-notive">
+            <div class="card__media">
+              <img src="assets/img/notive-dashboard.webp" alt="Notive dashboard showing streak, mood distribution and calendar" width="1600" height="900" loading="lazy" />
+            </div>
+            <div class="card__body">
+              <span class="card__tag">Personal project · Web app</span>
+              <h3 class="card__title">Notive: Personal Journal App</h3>
+              <p class="card__desc">
+                A private journaling web app with a rich-text editor, mood and tag tracking, and a dashboard showing
+                writing streak, mood distribution, and a monthly calendar.
+              </p>
+              <div class="chips chips--sm"><span class="chip">PHP</span><span class="chip">Laravel</span><span class="chip">MySQL</span><span class="chip">Chart.js</span></div>
+              <p class="card__meta">4 core tables · 6 moods · 7 demo entries</p>
+              <span class="card__cta">Read case study <i class="bi bi-arrow-right"></i></span>
+            </div>
+          </a>
+
+          <a class="card reveal" href="#p-dishup">
             <div class="card__media">
               <img src="assets/img/dishup-cover.webp" alt="Three screens of the DishUp food pre-order app" width="1300" height="846" loading="lazy" />
             </div>
@@ -1030,6 +1051,158 @@
               <li><strong>Localize the language</strong> so terms fit the target users.</li>
               <li><strong>Add cost per ingredient</strong> to the "what to prepare" view to support production planning.</li>
               <li><strong>Refresh the visual identity</strong> with colors and food imagery that suit local cuisine.</li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <!-- ============ TEMPLATE: NOTIVE ============ -->
+  <template id="tpl-notive">
+    <article class="cs">
+      <header class="cs__hero">
+        <p class="cs__eyebrow">Personal project · Web app</p>
+        <h1 class="cs__title">Notive: Personal Journal App</h1>
+        <p class="cs__lede">
+          A private journaling web app: write rich-text entries, tag and mood-track them, and review your writing
+          habits through a dashboard with streak, mood distribution, and a monthly calendar.
+        </p>
+        <dl class="cs__meta">
+          <div><dt>Context</dt><dd>Solo project for a course assignment.</dd></div>
+          <div><dt>My role</dt><dd>I designed and built the full stack: Laravel backend, MySQL schema, rich-text journaling, and the analytics dashboard.</dd></div>
+          <div><dt>Stack</dt><dd>PHP, Laravel, MySQL, Chart.js, Quill</dd></div>
+          <div><dt>Code</dt><dd><a href="https://github.com/putrilenggogenni/notive" target="_blank" rel="noopener">GitHub repository <i class="bi bi-arrow-up-right"></i></a></dd></div>
+        </dl>
+        <div class="cs__stats">
+          <div class="stat"><span class="stat__num" data-count="4">4</span><span class="stat__label">core tables</span></div>
+          <div class="stat"><span class="stat__num" data-count="6">6</span><span class="stat__label">mood types</span></div>
+          <div class="stat"><span class="stat__num" data-count="7">7</span><span class="stat__label">demo entries</span></div>
+          <div class="stat"><span class="stat__num" data-count="2">2</span><span class="stat__label">dashboard charts</span></div>
+        </div>
+      </header>
+
+      <div class="cs__layout">
+        <aside class="cs__toc" aria-label="Sections"></aside>
+
+        <div class="cs__main">
+          <section class="cs__section reveal" data-section="overview" data-title="Overview">
+            <h2 class="cs__h"><span class="cs__num">01</span> Overview</h2>
+            <p>
+              Notive is a private journaling web app built with Laravel. Each user keeps their own entries, written in
+              a rich-text editor, tagged and labeled with a mood, with an optional photo. A dashboard summarizes
+              writing activity so patterns are visible over time.
+            </p>
+            <ul class="checks">
+              <li>Authenticated, per-user journaling with full CRUD on entries.</li>
+              <li>Rich-text content via Quill, including inline images.</li>
+              <li>Mood and tag tracking, with filtering and search on the entry list.</li>
+              <li>A dashboard with streak, mood distribution, monthly counts, and a calendar.</li>
+            </ul>
+          </section>
+
+          <section class="cs__section reveal" data-section="features" data-title="Features">
+            <h2 class="cs__h"><span class="cs__num">02</span> Features</h2>
+            <div class="two-col">
+              <div class="panel-box">
+                <h3>Writing</h3>
+                <ul class="checks checks--tight">
+                  <li>Rich-text editor with formatting and inline image upload</li>
+                  <li>Mood selection from six options</li>
+                  <li>Tagging with reusable, lowercased tags</li>
+                  <li>Optional cover photo (up to 2 MB)</li>
+                  <li>Favorite flag and word count per entry</li>
+                </ul>
+              </div>
+              <div class="panel-box">
+                <h3>Review</h3>
+                <ul class="checks checks--tight">
+                  <li>Search entries by title or content</li>
+                  <li>Filter by mood, tag, or calendar date</li>
+                  <li>Sort by latest, oldest, or title</li>
+                  <li>Paginated entry list (9 per page)</li>
+                </ul>
+              </div>
+            </div>
+            <p class="note"><i class="bi bi-info-circle"></i> Mood options: Tenang, Senang, Bersemangat, Lelah, Sedih, Marah.</p>
+          </section>
+
+          <section class="cs__section reveal" data-section="datamodel" data-title="Data model">
+            <h2 class="cs__h"><span class="cs__num">03</span> Data model</h2>
+            <p>
+              Four core tables. <code>users</code> own <code>entries</code> (cascade on delete); <code>entries</code> and
+              <code>tags</code> relate through an <code>entry_tag</code> pivot with a composite primary key, also cascading.
+              Aggregations for the dashboard (mood counts, monthly counts) are done in SQL with <code>GROUP BY</code>
+              rather than in PHP.
+            </p>
+            <figure class="figure diagram">
+              <div class="diagram__scroll">
+                <svg viewBox="0 0 880 260" class="dg" role="img" aria-labelledby="nv-dg-title">
+                  <title id="nv-dg-title">ER diagram: users to entries, entries to tags via entry_tag pivot.</title>
+
+                  <rect x="20" y="90" width="150" height="80" rx="12" class="dg-box dg-src"/>
+                  <text x="95" y="125" class="dg-label" text-anchor="middle">users</text>
+                  <text x="95" y="145" class="dg-sub" text-anchor="middle">id · name · email</text>
+
+                  <rect x="230" y="60" width="200" height="140" rx="12" class="dg-box dg-silver"/>
+                  <text x="330" y="95" class="dg-label" text-anchor="middle">entries</text>
+                  <text x="330" y="115" class="dg-sub" text-anchor="middle">id · user_id (FK)</text>
+                  <text x="330" y="132" class="dg-sub" text-anchor="middle">title · content · mood</text>
+                  <text x="330" y="149" class="dg-sub" text-anchor="middle">photo · is_favorite</text>
+                  <text x="330" y="166" class="dg-sub" text-anchor="middle">word_count · timestamps</text>
+
+                  <rect x="490" y="90" width="150" height="80" rx="12" class="dg-box dg-gold"/>
+                  <text x="565" y="125" class="dg-label" text-anchor="middle">entry_tag</text>
+                  <text x="565" y="145" class="dg-sub" text-anchor="middle">entry_id · tag_id (PK)</text>
+
+                  <rect x="700" y="90" width="150" height="80" rx="12" class="dg-box dg-src"/>
+                  <text x="775" y="125" class="dg-label" text-anchor="middle">tags</text>
+                  <text x="775" y="145" class="dg-sub" text-anchor="middle">id · name (unique)</text>
+
+                  <path class="dg-line flow" d="M170 130 H230"/>
+                  <text x="200" y="122" class="dg-sub" text-anchor="middle">1:N cascade</text>
+                  <path class="dg-line flow" d="M430 130 H490"/>
+                  <text x="460" y="122" class="dg-sub" text-anchor="middle">N:M</text>
+                  <path class="dg-line flow" d="M640 130 H700"/>
+                  <text x="670" y="122" class="dg-sub" text-anchor="middle">N:M</text>
+                </svg>
+              </div>
+            </figure>
+          </section>
+
+          <section class="cs__section reveal" data-section="dashboard" data-title="Dashboard">
+            <h2 class="cs__h"><span class="cs__num">04</span> Dashboard</h2>
+            <p>
+              The dashboard aggregates per user: total entries, entries this month, writing streak (consecutive days),
+              mood distribution, and entries per month over the last six months. A calendar view marks days that have
+              entries and links to them. Mood counts and monthly counts come from SQL <code>GROUP BY</code> queries;
+              the streak is computed by walking distinct entry dates in PHP.
+            </p>
+            <ul class="checks">
+              <li>Streak counts consecutive days with at least one entry.</li>
+              <li>Mood distribution rendered as a Chart.js doughnut.</li>
+              <li>Monthly counts rendered as a Chart.js bar chart.</li>
+              <li>Calendar navigates month by month and links to entries by date.</li>
+            </ul>
+          </section>
+
+          <section class="cs__section reveal" data-section="limits" data-title="Limitations">
+            <h2 class="cs__h"><span class="cs__num">05</span> Limitations</h2>
+            <ul class="checks">
+              <li><strong>Runs locally on XAMPP.</strong> There is no live demo; the app is meant to run on a local stack.</li>
+              <li><strong>MySQL-only dashboard.</strong> Queries use <code>MONTH()</code> and <code>YEAR()</code>, so the app assumes MySQL.</li>
+              <li><strong>Photo upload capped at 2 MB</strong> (jpg, jpeg, png, webp).</li>
+              <li><strong>No automated tests</strong> beyond Laravel's default scaffolding.</li>
+            </ul>
+          </section>
+
+          <section class="cs__section reveal" data-section="learnings" data-title="Takeaways">
+            <h2 class="cs__h"><span class="cs__num">06</span> Takeaways</h2>
+            <ul class="checks">
+              <li><strong>Authorize by construction.</strong> Every entry action checks <code>user_id</code> and returns 403, so cross-user access fails loudly instead of silently.</li>
+              <li><strong>Reuse tags through a many-to-many.</strong> <code>firstOrCreate</code> plus a pivot with a composite key keeps tags normalized and deduplicated.</li>
+              <li><strong>Aggregate in SQL, not PHP.</strong> <code>GROUP BY</code> for mood and monthly counts keeps the dashboard fast and the code short.</li>
+              <li><strong>Let the schema carry the rules.</strong> Foreign keys with <code>ON DELETE CASCADE</code> keep cleanup automatic.</li>
             </ul>
           </section>
         </div>
