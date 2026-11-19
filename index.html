@@ -230,7 +230,7 @@
         <div class="projects">
           <a class="card reveal" href="#p-notive">
             <div class="card__media">
-              <img src="assets/img/notive-dashboard.webp" alt="Notive dashboard showing streak, mood distribution and calendar" width="1600" height="900" loading="lazy" />
+              <img src="assets/img/notive-dashboard.webp" alt="Notive dashboard showing streak, mood distribution and calendar" width="1600" height="896" loading="lazy" />
             </div>
             <div class="card__body">
               <span class="card__tag">Personal project · Web app</span>
@@ -1137,6 +1137,14 @@
               </div>
             </div>
             <p class="note"><i class="bi bi-info-circle"></i> Mood options: Tenang, Senang, Bersemangat, Lelah, Sedih, Marah.</p>
+            <figure class="figure zoomable">
+              <img src="assets/img/notive-entries.webp" alt="Notive entries list with search, mood and tag filters" width="1600" height="900" loading="lazy" />
+              <figcaption class="figcap">Entries list: search, filter by mood, tag, or date, sort, paginate. Click to enlarge.</figcaption>
+            </figure>
+            <figure class="figure zoomable">
+              <img src="assets/img/notive-create.webp" alt="Notive create entry form with Quill rich-text editor and mood selector" width="1600" height="895" loading="lazy" />
+              <figcaption class="figcap">Create entry: Quill rich-text editor, mood selector, tags, optional photo. Click to enlarge.</figcaption>
+            </figure>
           </section>
 
           <section class="cs__section reveal" data-section="datamodel" data-title="Data model">
@@ -1190,6 +1198,10 @@
               entries and links to them. Mood counts and monthly counts come from SQL <code>GROUP BY</code> queries;
               the streak is computed by walking distinct entry dates in PHP.
             </p>
+            <figure class="figure zoomable">
+              <img src="assets/img/notive-dashboard.webp" alt="Notive dashboard with streak, mood distribution and monthly calendar" width="1600" height="896" loading="lazy" />
+              <figcaption class="figcap">Dashboard: writing streak, mood distribution, monthly counts, and a calendar that links to entries. Click to enlarge.</figcaption>
+            </figure>
             <ul class="checks">
               <li>Streak counts consecutive days with at least one entry.</li>
               <li>Mood distribution rendered as a Chart.js doughnut.</li>
