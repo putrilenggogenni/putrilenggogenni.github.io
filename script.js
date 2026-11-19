@@ -46,7 +46,15 @@
     navIndicator.style.opacity = '1';
   };
 
-  const onScroll = () => nav.classList.toggle('is-scrolled', window.scrollY > 8);
+  const onScroll = () => {
+    nav.classList.toggle('is-scrolled', window.scrollY > 8);
+    const sp = $('#scroll-progress');
+    if (sp) {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const ratio = max > 0 ? window.scrollY / max : 0;
+      sp.style.width = (Math.min(1, Math.max(0, ratio)) * 100) + '%';
+    }
+  };
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', () => {
