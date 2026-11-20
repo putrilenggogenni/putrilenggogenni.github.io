@@ -111,7 +111,7 @@
       playReveal(entry.target);
       obs.unobserve(entry.target);
     });
-  }, { threshold: 0.12 });
+  }, { threshold: 0.15 });
 
   $$('.reveal').forEach(el => reveal.observe(el));
 
@@ -286,7 +286,7 @@
       panel.hidden = true;
       content.replaceChildren();
       closeTimer = null;
-    }, reduceMotion ? 0 : 400);
+    }, reduceMotion ? 0 : 450);
 
     if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus({ preventScroll: true });
   }
